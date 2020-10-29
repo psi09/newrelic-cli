@@ -5,7 +5,8 @@ go:
 
 branches:
   only:
-  - master
+  #- master
+  - develop
   - /^v.*$/
 
 install:
