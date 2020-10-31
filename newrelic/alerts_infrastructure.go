@@ -46,7 +46,7 @@ type AlertsInfraThreshold struct {
 type AlertsInfraThresholdValues struct {
 	DurationMinutes *int64  `json:"duration_minutes,omitempty"`
 	TimeFunction    *string `json:"time_function,omitempty"`
-	Value           *int64  `json:"value,omitempty"`
+	Value           *float64 `json:"value,omitempty"`
 }
 
 func (s *infraConditions) listAll(ctx context.Context, list *AlertsConditionList, opt *AlertsConditionsOptions) (*Response, error) {

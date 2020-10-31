@@ -12,7 +12,8 @@ if [ ! -d $targetFolder ];then
     mkdir -p $targetFolder
 fi
 
-${basepath}/nr backup alertsconditions -d $targetFolder -r fail-backup-conditions.log
+#${basepath}/nr backup alertsconditions -d $targetFolder -r fail-backup-conditions.log
+`./newrelic-cli backup alertsconditions -d $targetFolder -r fail-backup-conditions.log`
 exitCode=$?""
 
 if [ $exitCode == "0" ];then
@@ -29,7 +30,8 @@ while [ $exitCode != "0" ]
 do
     counter=`expr $counter + 1`
 
-    ${basepath}/nr backup alertsconditions -d $targetFolder -r fail-backup-conditions.log
+#    ${basepath}/nr backup alertsconditions -d $targetFolder -r fail-backup-conditions.log
+	`./newrelic-cli backup alertsconditions -d $targetFolder -r fail-backup-conditions.log`
     exitCode=$?""
 
     if [ $exitCode != "0" ];then
